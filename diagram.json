@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "author": "Hana Izzdeen",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -51, "left": -189.2, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -38.1,
+      "left": -63,
+      "attrs": { "temperature": "26.5" }
+    },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp1", "top": -67.2, "left": 158.44, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp1:3V3", "dht1:VCC", "red", [ "v-48", "h124.95", "v259.2", "h-336" ] ],
+    [ "dht1:VCC", "bb1:13b.j", "red", [ "v28.8" ] ],
+    [ "dht1:SDA", "esp1:15", "green", [ "v86.4", "h307.3", "v-57.6" ] ],
+    [ "dht1:VCC", "bb1:13b.g", "", [ "$bb" ] ],
+    [ "dht1:SDA", "bb1:14b.g", "", [ "$bb" ] ],
+    [ "dht1:NC", "bb1:15b.g", "", [ "$bb" ] ],
+    [ "dht1:GND", "bb1:16b.g", "", [ "$bb" ] ],
+    [ "esp1:GND.1", "dht1:GND", "black", [ "h-182.25", "v-9.6" ] ]
+  ],
+  "dependencies": {}
+}
